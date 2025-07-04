@@ -1,0 +1,61 @@
+// Color Palette
+$cream: #EFF7CF;
+$celadon: #BAD9B5;
+$ecru: #ABA361;
+$garnet: #732C2C;
+$chocolate-cosmos: #420C14;
+
+body {
+    font-family: "Times New Roman", serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+canvas {
+  display: block;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+}
+
+.content-tray {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+}
+
+.content-tray.home {
+    background-color: $cream;
+}
+
+h1 {
+    color: $chocolate-cosmos;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.links {
+    line-height: 2;
+}
+
+.links a {
+    color: $chocolate-cosmos;
+    text-decoration: underline;
+    font-size: 16px;
+    display: block;
+    margin: 10px 0;
+}
+
+.links a:hover {
+    text-decoration: none;
+}
+
+.site-title {
+  color: $ecru;
+}

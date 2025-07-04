@@ -1,0 +1,56 @@
+body {
+  font-family: "Times New Roman", serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+canvas {
+  display: block;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+}
+
+.content-tray {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+}
+
+.content-tray.home {
+  background-color: #EFF7CF;
+}
+
+h1 {
+  color: #420C14;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.links {
+  line-height: 2;
+}
+
+.links a {
+  color: #420C14;
+  text-decoration: underline;
+  font-size: 16px;
+  display: block;
+  margin: 10px 0;
+}
+
+.links a:hover {
+  text-decoration: none;
+}
+
+.site-title {
+  color: #ABA361;
+}
+
+/*# sourceMappingURL=styles.css.map */
