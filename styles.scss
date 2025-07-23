@@ -1,62 +1,124 @@
 // Color Palette
-$cream: #EFF7CF;
-$celadon: #BAD9B5;
-$ecru: #ABA361;
-$garnet: #732C2C;
-$chocolate-cosmos: #420C14;
+$cream: #eff7cf;
+$celadon: #bad9b5;
+$ecru: #aba361;
+$garnet: #732c2c;
+$chocolate-cosmos: #420c14;
 
 body {
-    font-family: "Times New Roman", serif;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    line-height: 1.6;
+  font-family: "Nunito Sans", sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  line-height: 1.6;
 }
 
 canvas {
   display: block;
 }
 
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
 .container {
-    background-color: white;
-    padding: 20px;
+  background-color: white;
+  padding: 20px;
 }
 
 .content-tray {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $cream;
 }
 
-.content-tray.home {
-    background-color: $cream;
+.home-title {
+  background-color: $cream;
+}
+
+.home-links {
+  margin-top: 1rem;
+  background-color: $celadon;
+}
+
+.wide-content-tray {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $cream;
+}
+.directory {
+  background-color: $celadon;
 }
 
 h1 {
-    color: $chocolate-cosmos;
-    margin-bottom: 30px;
-    font-size: 24px;
+  color: $chocolate-cosmos;
+  margin-bottom: 30px;
+  font-size: 24px;
 }
 
 .links {
-    line-height: 2;
+  line-height: 2;
 }
 
 .links a {
-    color: $chocolate-cosmos;
-    text-decoration: underline;
-    font-size: 16px;
-    display: block;
-    margin: 10px 0;
+  color: $chocolate-cosmos;
+  text-decoration: underline;
+  font-size: 16px;
+  display: block;
+  margin: 10px 0;
 }
 
 .links a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .site-title {
   color: $ecru;
   text-align: center;
+
+  &--phonetic {
+    text-align: center;
+    color: $garnet;
+  }
+}
+
+svg.pronunciation-btn {
+  fill: $ecru;
+
+  &:hover {
+    fill: $chocolate-cosmos;
+  }
+}
+
+.directory-title {
+  background-color: $cream;
+  text-align: center;
+}
+
+.directory {
+  margin-top: 1rem;
+}
+
+ul.directory-list {
+  li::marker {
+    content: '';
+  }
+}
+
+.col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  place-items: center;
+  padding: 0.6rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+  background: white;
 }

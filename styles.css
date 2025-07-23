@@ -1,5 +1,5 @@
 body {
-  font-family: "Times New Roman", serif;
+  font-family: "Nunito Sans", sans-serif;
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -11,6 +11,10 @@ canvas {
   display: block;
 }
 
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
 .container {
   background-color: white;
   padding: 20px;
@@ -20,15 +24,31 @@ canvas {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
+  background-color: #eff7cf;
 }
 
-.content-tray.home {
-  background-color: #EFF7CF;
+.home-title {
+  background-color: #eff7cf;
+}
+
+.home-links {
+  margin-top: 1rem;
+  background-color: #bad9b5;
+}
+
+.wide-content-tray {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #eff7cf;
+}
+
+.directory {
+  background-color: #bad9b5;
 }
 
 h1 {
-  color: #420C14;
+  color: #420c14;
   margin-bottom: 30px;
   font-size: 24px;
 }
@@ -38,7 +58,7 @@ h1 {
 }
 
 .links a {
-  color: #420C14;
+  color: #420c14;
   text-decoration: underline;
   font-size: 16px;
   display: block;
@@ -50,8 +70,47 @@ h1 {
 }
 
 .site-title {
-  color: #ABA361;
+  color: #aba361;
   text-align: center;
+}
+.site-title--phonetic {
+  text-align: center;
+  color: #732c2c;
+}
+
+svg.pronunciation-btn {
+  fill: #aba361;
+}
+svg.pronunciation-btn:hover {
+  fill: #420c14;
+}
+
+.directory-title {
+  background-color: #eff7cf;
+  text-align: center;
+}
+
+.directory {
+  margin-top: 1rem;
+}
+
+ul.directory-list li::marker {
+  content: "";
+}
+
+.col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  place-items: center;
+  padding: 0.6rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  background: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
