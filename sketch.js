@@ -9,7 +9,7 @@ let jarHeight = 200;
 let bottomJarY = jarY + jarHeight;
 
 function preload() {
-  coinImg = loadImage('/assets/penny.jpg');
+  coinImg = loadImage('/assets/penny.png');
 }
 
 function setup() {
@@ -72,42 +72,42 @@ function draw() {
   text("Click anywhere to drop a coin!", width / 2, 30);
 }
 
-function drawCoin(x, y, radius) {
-  push();
-  translate(x, y);
+// function mouseClicked(x, y, radius) {
+//   push();
+//   translate(x, y);
 
-  image(coinImage, 0, 0, radius * 2, radius * 2);
-  // if (coinImg) {
-  //   // imageMode(CENTER);
-  // } else {
-  //     // Outer rim
-  //     fill(255, 215, 0); // Gold
-  //     stroke(218, 165, 32); // Dark gold
-  //     strokeWeight(3);
-  //     ellipse(0, 0, radius * 2, radius * 2);
+//   image(coinImage, 0, 0, radius * 2, radius * 2);
+//   if (coinImg) {
+//     // imageMode(CENTER);
+//   } else {
+//       // Outer rim
+//       fill(255, 215, 0); // Gold
+//       stroke(218, 165, 32); // Dark gold
+//       strokeWeight(3);
+//       ellipse(0, 0, radius * 2, radius * 2);
 
-  //     // Inner circle
-  //     fill(255, 223, 0); // Lighter gold
-  //     stroke(255, 215, 0);
-  //     strokeWeight(1);
-  //     ellipse(0, 0, radius * 1.5, radius * 1.5);
+//       // Inner circle
+//       fill(255, 223, 0); // Lighter gold
+//       stroke(255, 215, 0);
+//       strokeWeight(1);
+//       ellipse(0, 0, radius * 1.5, radius * 1.5);
 
-  //     // Center design
-  //     fill(218, 165, 32);
-  //     noStroke();
-  //     ellipse(0, 0, radius * 0.8, radius * 0.8);
+//       // Center design
+//       fill(218, 165, 32);
+//       noStroke();
+//       ellipse(0, 0, radius * 0.8, radius * 0.8);
 
-  //     // Dollar sign
-  //     fill(255, 215, 0);
-  //     textAlign(CENTER, CENTER);
-  //     textSize(radius * 0.8);
-  //     text("$", 0, 0);
+//       // Dollar sign
+//       fill(255, 215, 0);
+//       textAlign(CENTER, CENTER);
+//       textSize(radius * 0.8);
+//       text("$", 0, 0);
 
-  //     pop();
-  // }
-}
+//       pop();
+//   }
+// }
 
-function mousePressed() {
+function mouseClicked() {
   // Create new coin at mouse position
   let newCoin = {
     x: mouseX,
