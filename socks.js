@@ -1,0 +1,218 @@
+    let measurements = {
+      ankleCircumference: 25,
+      cuffLength: 12,
+      footLength: 28,
+      footCircumference: 27
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      loadAbbreviations();
+      updatePattern();
+
+      const form = document.getElementById('measurements-form');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        measurements.ankleCircumference = parseFloat(document.getElementById('ankle-circumference').value);
+        measurements.cuffLength = parseFloat(document.getElementById('cuff-length').value);
+        measurements.footLength = parseFloat(document.getElementById('foot-length').value);
+        measurements.footCircumference = parseFloat(document.getElementById('foot-circumference').value);
+
+        console.log('Measurements captured:', measurements);
+
+        updatePattern();
+      });
+    });
+
+    function loadAbbreviations() {
+      fetch('abbrevs.json')
+        .then(response => response.json())
+        .then(abbrevs => {
+          addTooltipsToDocument(abbrevs);
+        })
+        .catch(error => console.error('Error loading abbreviations:', error));
+    }
+
+    function addTooltipsToDocument(abbrevs) {
+      const body = document.body;
+      const walker = document.createTreeWalker(
+        body,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode: function(node) {
+            if (node.parentElement.classList.contains('abbrev-wrapper') ||
+                node.parentElement.classList.contains('abbrev-tooltip')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        }
+      );
+
+      const nodesToProcess = [];
+      let currentNode;
+      while (currentNode = walker.nextNode()) {
+        nodesToProcess.push(currentNode);
+      }
+
+      const processedAbbrevs = new Set();
+
+      nodesToProcess.forEach(node => {
+        let text = node.textContent;
+        let hasAbbrev = false;
+
+        for (const [abbrev, fullForm] of Object.entries(abbrevs)) {
+          if (text.includes(abbrev) && !processedAbbrevs.has(abbrev)) {
+            hasAbbrev = true;
+            break;
+          }
+        }
+
+        if (hasAbbrev) {
+          const fragment = document.createDocumentFragment();
+          let lastIndex = 0;
+
+          const pattern = new RegExp('\\b(' + Object.keys(abbrevs).join('|') + ')\\b', 'g');
+          let match;
+          const matches = [];
+
+          while ((match = pattern.exec(text)) !== null) {
+            if (!processedAbbrevs.has(match[0])) {
+              matches.push({
+                index: match.index,
+                text: match[0],
+                fullForm: abbrevs[match[0]]
+              });
+              processedAbbrevs.add(match[0]);
+            }
+          }
+
+          if (matches.length > 0) {
+            matches.forEach((match, i) => {
+              if (match.index > lastIndex) {
+                fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+              }
+
+              const wrapper = document.createElement('span');
+              wrapper.className = 'abbrev-wrapper';
+
+              const abbrevText = document.createTextNode(match.text);
+              wrapper.appendChild(abbrevText);
+
+              const icon = document.createElement('span');
+              icon.className = 'abbrev-icon';
+              icon.textContent = 'i';
+              wrapper.appendChild(icon);
+
+              const tooltip = document.createElement('span');
+              tooltip.className = 'abbrev-tooltip';
+              tooltip.textContent = match.fullForm;
+              wrapper.appendChild(tooltip);
+
+              fragment.appendChild(wrapper);
+              lastIndex = match.index + match.text.length;
+            });
+
+            if (lastIndex < text.length) {
+              fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+            }
+
+            node.parentNode.replaceChild(fragment, node);
+          }
+        }
+      });
+    }
+
+    function updatePattern() {
+      // STEP 1
+      const diff = Math.abs(measurements.ankleCircumference - measurements.footCircumference);
+      const biggerCircumference = Math.max(measurements.ankleCircumference, measurements.footCircumference);
+
+      let inputNeedleSize;
+      if (diff < 1) {
+        inputNeedleSize = ['2.25mm'];
+      } else if (diff >= 1 && diff < 2) {
+        inputNeedleSize = ['2.00mm', '2.25mm'];
+      } else if (diff >= 2 && diff < 3) {
+        inputNeedleSize = ['2.00mm', '2.5mm'];
+      } else if (diff >= 3) {
+        inputNeedleSize = ['2.00mm', '2.75mm'];
+      }
+
+      document.getElementById('select-ndl-size').textContent = inputNeedleSize.join(' and ');
+
+      // STEP 2
+      const gauge = 68 / 23.5;
+      let selectCastOnSts;
+
+      if (measurements.ankleCircumference >= 13 && measurements.ankleCircumference <= 16) {
+        selectCastOnSts = 44;
+      } else if (measurements.ankleCircumference >= 17 && measurements.ankleCircumference <= 19) {
+        selectCastOnSts = 52;
+      } else if (measurements.ankleCircumference >= 20 && measurements.ankleCircumference <= 22) {
+        selectCastOnSts = 64;
+      } else if (measurements.ankleCircumference >= 23 && measurements.ankleCircumference <= 24) {
+        selectCastOnSts = 68;
+      } else if (measurements.ankleCircumference >= 25 && measurements.ankleCircumference <= 26) {
+        selectCastOnSts = 76;
+      } else if (measurements.ankleCircumference >= 27 && measurements.ankleCircumference <= 29) {
+        selectCastOnSts = 84;
+      } else if (measurements.ankleCircumference >= 30 && measurements.ankleCircumference <= 33) {
+        selectCastOnSts = 92;
+      }
+
+      const displayCastOnSts = selectCastOnSts + 1;
+      document.querySelectorAll('.select-cast-on-sts').forEach(el => {
+        el.textContent = displayCastOnSts;
+      });
+
+      // STEP 3
+      let selectFirstNdlSize;
+      if (inputNeedleSize.length === 1) {
+        selectFirstNdlSize = inputNeedleSize[0];
+      } else {
+        const needleSizes = inputNeedleSize.map(size => parseFloat(size.replace('mm', '')));
+        if (measurements.ankleCircumference === biggerCircumference) {
+          selectFirstNdlSize = Math.max(...needleSizes) + 'mm';
+        } else {
+          selectFirstNdlSize = Math.min(...needleSizes) + 'mm';
+        }
+      }
+
+      document.querySelectorAll('.select-first-ndl-size').forEach(el => {
+        el.textContent = selectFirstNdlSize;
+      });
+
+      // STEP 4
+      const selectCuffLength = measurements.cuffLength - 5;
+      document.querySelectorAll('.select-cuff-length').forEach(el => {
+        el.textContent = selectCuffLength + 'cm';
+      });
+
+      // STEP 5
+      const selectHalfCastOnSts = selectCastOnSts / 2;
+      const selectHalfCastOnStsMinus6 = selectHalfCastOnSts - 6;
+      document.querySelectorAll('.select-half-cast-on-sts').forEach(el => {
+        el.textContent = selectHalfCastOnSts;
+      });
+      document.querySelectorAll('.select-half-cast-on-sts-minus-6').forEach(el => {
+        el.textContent = selectHalfCastOnStsMinus6;
+      });
+
+      // STEP 6
+      const selectFootLength = measurements.footLength - 10;
+      document.querySelectorAll('.select-foot-length').forEach(el => {
+        el.textContent = selectFootLength + 'cm';
+      });
+
+      // STEP 7
+      const selectWedgeFinishSts = selectCastOnSts < 56 ? 24 : 32;
+      const selectWedgeFinishStsPlus12 = selectWedgeFinishSts + 12;
+      document.querySelectorAll('.select-wedge-finish-sts').forEach(el => {
+        el.textContent = selectWedgeFinishSts;
+      });
+      document.querySelectorAll('.select-wedge-finish-sts-plus-12').forEach(el => {
+        el.textContent = selectWedgeFinishStsPlus12;
+      });
+    }

@@ -1,0 +1,163 @@
+<head>
+  <script src="socks.js">
+  </script>
+  <link rel="stylesheet" href="socks.css" />
+</head>
+
+<body>
+  <nav class="section-nav">
+    <ul>
+      <li><a href="#form">Measurements</a></li>
+      <li><a href="#cast-on">Cast on</a></li>
+      <li><a href="#invisible-join">Join in the round</a></li>
+      <li><a href="#cuff">Cuff</a></li>
+      <li><a href="#heel-opening">Heel opening</a></li>
+      <li><a href="#foot">Foot</a></li>
+      <li><a href="#toe">Wedge toe</a></li>
+      <li><a href="#heel">Finish the heel</a></li>
+    </ul>
+  </nav>
+
+  <img src="/assets/face.png" alt="face" id="face"/>
+  <h1 id="page-title">Snug sock pattern</h1>
+
+  <div class="form-container" id="form">
+    <h3>Enter your own measurements:</h3>
+
+    <form id="measurements-form">
+      <ul class="no-markers">
+        <li>
+          <label for="ankle-circumference">Ankle (or calf) circumference at desired cuff height:</label>
+          <input type="number" id="ankle-circumference" name="ankleCircumference" step="0.5" min="13" max="33" placeholder="25">
+          <span>cm</span>
+        </li>
+        <li>
+          <label for="cuff-length">Desired cuff length:</label>
+          <input type="number" id="cuff-length" name="cuffLength" step="0.5" min="7" max="18" placeholder="12">
+          <span>cm</span>
+        </li>
+        <li>
+          <label for="foot-length">Length of foot:</label>
+          <input type="number" id="foot-length" name="footLength" step="0.5" min="20" placeholder="28">
+          <span>cm</span>
+        </li>
+        <li>
+          <label for="foot-circumference">Foot circumference at widest part:</label>
+          <input type="number" id="foot-circumference" name="footCircumference" step="0.5" min="13" max="33" placeholder="27">
+          <span>cm</span>
+        </li>
+      </ul>
+      <button type="submit">Calculate Pattern</button>
+    </form>
+  </div>
+
+  <p><strong>Sizes:</strong> one size / make-to-fit</p>
+  <h4 id="materials">Materials:</h4>
+  <ul>
+    <li>
+      Yarn: one (1) skein of sock yarn with at least 15% nylon or other
+      polyamide + one (1) mini skein of similar sock yarn if you want to add a
+      contrasting heel/cuff/toe.
+    </li>
+    <li>
+      Needles: DPNs or circular needles in sizes <span id="select-ndl-size"></span>. I find it
+      easier to join in the round on DPNs and I switch to circular needles after
+      the heel.
+    </li>
+    <li>Small, snippy scissors</li>
+    <li>A tapestry needle</li>
+  </ul>
+
+  <h2 id="intructions">Instructions</h2>
+  <h4 class="jump-target" id="cast-on">Cast on:</h4>
+  <p>Cast on method: <a href="https://www.youtube.com/watch?v=T5ScPtAPmrI" target="_blank" rel="noopener noreferrer">long-tail cast-on</a> but around both needle tips at once, such that the cast-on row is a bit looser.</p>
+  <p>Using <span class="select-first-ndl-size"></span> needles, cast on <span class="select-cast-on-sts"></span> sts.</p>
+  <h4 id="invisible-join">Join in the round:</h4>
+  <p>
+    Invisible join: position your needles in a circle and ensure all sts. on
+    your cast-on row are facing inwards. Your working yarn should be on the RH
+    needle. K1, joining in the round. Pass the next stitch on the RH needle over
+    your knitted stitch. K1. Then: * P2, K2, P2 * repeat from * to end.
+  </p>
+  <h4 id="cuff">Cuff:</h4>
+  <em
+    >Note: measurements should be taken with work stretched laterally, ie.
+    tried-on.</em
+  >
+  <p>
+    Continue to knit in 2x2 ribbing until the cuff measures <span class="select-cuff-length"></span>.
+  </p>
+  <h4 id="heel-opening">Prepare the heel opening:</h4>
+  <em
+    >Note: If knitting a contrasting heel, you may use the CC for this step. If not, use
+    a piece of scrap yarn in a contrasting color to your main color.</em
+  >
+  <ul class="no-markers">
+    <li>
+      <strong>Rd. 1</strong>: With the MC yarn, knit (no ribbing) across <span class="select-half-cast-on-sts"></span> sts. from
+      BOR, then continue ribbing until to end.
+    </li>
+    <li>
+      <strong>Rd. 2</strong> (half rd.): With the CC yarn, knit (no ribbing) across <span class="select-half-cast-on-sts"></span> sts. from
+      BOR. Cut CC yarn.
+    </li>
+    <li>
+      <strong>Rd. 3</strong>: If on DPNs, start from BOR again and knit with MC yarn across those
+      sts. just worked in CC yarn, then resume 2x2 ribbing until end. If on
+      circular needles, first slip those sts. just worked in CC yarn back to
+      the LH needle, then knit with MC yarn for half the total sts., and
+      resume 2x2 ribbing until end.
+    </li>
+    <br />
+    <li>
+      Insert lifelines: thread a tapestry needle with a piece of scrap yarn of a
+      slightly smaller weight than your project yarn. Working from R to L, pick
+      the right-leaning half of every knit stitch in the row *below* the
+      contrasting one. Leave a generous allowance on either end. Repeat this
+      process for the row *above* the contrasting one.
+    </li>
+  </ul>
+  <h4 id="foot">Foot:</h4>
+  <p>
+    Switch needle size at this point, depending on your measurements. I like to
+    switch to circular needles at this point.
+  </p>
+  <em
+    >Reminder: measurements should be taken with work stretched laterally, ie.
+    tried-on</em
+  >
+  <p>
+    Continue in 2x2 ribbing until work measures <span class="select-foot-length"></span> from where
+    you prepared the forethought heel.
+  </p>
+  <h4 id="toe">Wedge toe:</h4>
+  <p>Attach CC if using, or continue in MC like so:</p>
+  <ul class="no-markers">
+    <li>Knit 3 rds.</li>
+    <li>
+      <strong>Rd. 4</strong>: K1, SSK, knit <span class="select-half-cast-on-sts-minus-6"></span> sts., K2tog, K1. Then: K1,
+      SSK, knit <span class="select-half-cast-on-sts-minus-6"></span> sts., K2tog, K1.
+    </li>
+    <li><strong>Rd. 5</strong>: Knit.</li>
+  </ul>
+  <ul class="no-markers">
+    <li>Repeat rds. 4 & 5 until <span class="select-wedge-finish-sts-plus-12">44</span> sts. left in total.</li>
+    <li>Repeat rd. 4 for 3 rds; 12 sts. decreased, <span class="select-wedge-finish-sts">32</span> sts. left in total.</li>
+    <li>Graft remaining sts. using <a href="https://youtu.be/-nlWKvrGp-4?si=YXxCUClryryDJ2yX&t=11" target="_blank" rel="noopener noreferrer">kitchener stitch</a>.</li>
+  </ul>
+
+  <h4 class="jump-target" id="heel">Finish the heel:</h4>
+
+  <ul class="no-markers">
+    <li>Locate the center of the row you knit with contrasting yarn and carefully
+    snip.Use the tip of a tapestry needle or knitting needle to pick this row out.</li>
+    <li>Place the live rows (secured with lifelines) back on your <span class="select-first-ndl-size"></span>
+     needles.</li>
+     <li>Follow the same instructions used for the wedge toe.</li>
+     <li>Weave in ends with a tapestry needle. Blocking not needed.</li>
+     <br />
+     <li>Knit another identical sock.</li>
+  </ul>
+  <div style="height: 680px;"></div>
+  <img alt="footer" src="/assets/socks.png" id="footer" />
+</body>
