@@ -81,15 +81,7 @@ h4.jump-target {
     display: none;
   }
 }
-#select-ndl-size,
-.select-first-ndl-size,
-.select-cast-on-sts,
-.select-cuff-length,
-.select-half-cast-on-sts,
-.select-half-cast-on-sts-minus-6,
-.select-foot-length,
-.select-wedge-finish-sts,
-.select-wedge-finish-sts-plus-12 {
+.pattern-value {
   font-weight: bold;
   color: #5170ff;
 }

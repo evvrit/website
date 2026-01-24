@@ -130,20 +130,23 @@
     }
 
     function updatePattern() {
-      // STEP 1
       const diff = Math.abs(measurements.ankleCircumference - measurements.footCircumference);
-      const biggerCircumference = Math.max(measurements.ankleCircumference, measurements.footCircumference);
+      const biggerCircumference = Math.max(measurements.ankleCircumference, measurements.footCircumference)
 
       const sizeNote = document.getElementById('size-note');
       sizeNote.classList.add('hidden');
 
+      const selectNdlSize = document.getElementById('select-ndl-size');
+      const secondNdl = document.getElementById('switch-ndls');
+
       let inputNeedleSize;
       if (diff < 1) {
-        inputNeedleSize = ['2.25mm'];
+        inputNeedleSize = ['2.00mm'];
+        secondNdl.classList.add('hidden');
       } else if (diff >= 1 && diff < 2) {
         inputNeedleSize = ['2.00mm', '2.25mm'];
       } else if (diff >= 2 && diff < 3) {
-        inputNeedleSize = ['2.00mm', '2.5mm'];
+        inputNeedleSize = ['2.00mm', '2.50mm'];
       } else if (diff >= 3 && diff < 4) {
         inputNeedleSize = ['2.00mm', '2.75mm'];
       } else if (diff >= 4) {
@@ -151,10 +154,25 @@
         sizeNote.classList.remove('hidden');
       }
 
-      document.getElementById('select-ndl-size').textContent = inputNeedleSize.join(' and ');
+      let selectFirstNdlSize;
+      let selectSecondNdlSize;
+      if (inputNeedleSize.length === 1) {
+        selectFirstNdlSize = inputNeedleSize[0];
+      } else {
+        const needleSizes = inputNeedleSize.map(size => parseFloat(size.replace('mm', '')));
+        if (measurements.ankleCircumference === biggerCircumference) {
+          selectFirstNdlSize = Math.max(...needleSizes).toFixed(2) + 'mm';
+          selectSecondNdlSize = Math.min(...needleSizes).toFixed(2) + 'mm';
+        } else {
+          selectFirstNdlSize = Math.min(...needleSizes).toFixed(2) + 'mm';
+          selectSecondNdlSize = Math.max(...needleSizes).toFixed(2) + 'mm';
+        }
+      }
 
-      // STEP 2
-      const gauge = 68 / 23.5;
+      selectNdlSize.textContent = `${inputNeedleSize.length === 1 ? "size" : "sizes"} ${inputNeedleSize.join(" and ")}`;
+      secondNdl.innerHTML = `Switch to <span class="select-second-ndl-size pattern-value">${selectSecondNdlSize}</span> needles.`;
+      secondNdl.classList.remove('hidden');
+
       let selectCastOnSts;
 
       if (measurements.ankleCircumference >= 13 && measurements.ankleCircumference <= 16) {
@@ -178,30 +196,17 @@
         el.textContent = displayCastOnSts;
       });
 
-      // STEP 3
-      let selectFirstNdlSize;
-      if (inputNeedleSize.length === 1) {
-        selectFirstNdlSize = inputNeedleSize[0];
-      } else {
-        const needleSizes = inputNeedleSize.map(size => parseFloat(size.replace('mm', '')));
-        if (measurements.ankleCircumference === biggerCircumference) {
-          selectFirstNdlSize = Math.max(...needleSizes) + 'mm';
-        } else {
-          selectFirstNdlSize = Math.min(...needleSizes) + 'mm';
-        }
-      }
+
 
       document.querySelectorAll('.select-first-ndl-size').forEach(el => {
         el.textContent = selectFirstNdlSize;
       });
 
-      // STEP 4
       const selectCuffLength = measurements.cuffLength - 5;
       document.querySelectorAll('.select-cuff-length').forEach(el => {
         el.textContent = selectCuffLength + 'cm';
       });
 
-      // STEP 5
       const selectHalfCastOnSts = selectCastOnSts / 2;
       const selectHalfCastOnStsMinus6 = selectHalfCastOnSts - 6;
       document.querySelectorAll('.select-half-cast-on-sts').forEach(el => {
@@ -211,13 +216,11 @@
         el.textContent = selectHalfCastOnStsMinus6;
       });
 
-      // STEP 6
       const selectFootLength = measurements.footLength - 10;
       document.querySelectorAll('.select-foot-length').forEach(el => {
         el.textContent = selectFootLength + 'cm';
       });
 
-      // STEP 7
       const selectWedgeFinishSts = selectCastOnSts < 56 ? 24 : 32;
       const selectWedgeFinishStsPlus12 = selectWedgeFinishSts + 12;
       document.querySelectorAll('.select-wedge-finish-sts').forEach(el => {

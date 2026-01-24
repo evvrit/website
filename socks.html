@@ -1,7 +1,11 @@
 <head>
+  <link rel="stylesheet" href="styles/socks.css" />
+  <meta name="viewport" width="width=device-width" />
+  <meta charset="utf-8" />
+  <meta name="description" content="A snug sock knitting pattern that you can customize to your own measurements." />
+  <title>Snug sock pattern</title>
   <script src="socks.js">
   </script>
-  <link rel="stylesheet" href="styles/socks.css" />
 </head>
 
 <body>
@@ -74,7 +78,7 @@
       contrasting heel/cuff/toe.
     </li>
     <li>
-      Needles: DPNs or circular needles in sizes <span id="select-ndl-size"></span>. I find it
+      Needles: DPNs or circular needles in <span id="select-ndl-size" class="pattern-value"></span>. I find it
       easier to join in the round on DPNs and I switch to circular needles after
       the heel.
     </li>
@@ -84,14 +88,14 @@
 
   <h2 id="intructions">Instructions</h2>
   <h4 class="jump-target" id="cast-on">Cast on:</h4>
-  <p>Cast on method: <a href="https://www.youtube.com/watch?v=T5ScPtAPmrI" target="_blank" rel="noopener noreferrer">long-tail cast-on</a> but around both needle tips at once, such that the cast-on row is a bit looser.</p>
-  <p>Using <span class="select-first-ndl-size"></span> needles, cast on <span class="select-cast-on-sts"></span> sts.</p>
+  <p>Cast on method: <a href="https://www.youtube.com/watch?v=T5ScPtAPmrI" target="_blank" rel="noopener noreferrer">long-tail cast-on</a> but around both needles at once, such that the cast-on row is a bit looser.</p>
+  <p>Using <span class="select-first-ndl-size pattern-value"></span> needles, cast on <span class="select-cast-on-sts pattern-value"></span> sts.</p>
   <h4 id="invisible-join">Join in the round:</h4>
   <p>
     Invisible join: position your needles in a circle and ensure all sts. on
     your cast-on row are facing inwards. Your working yarn should be on the RH
     needle. K1, joining in the round. Pass the next stitch on the RH needle over
-    your knitted stitch. K1. Then: * P2, K2, P2 * repeat from * to end.
+    your knitted stitch, as you do when casting off. K1. Then: * P2, K2, P2 * repeat from * to end.
   </p>
   <h4 id="cuff">Cuff:</h4>
   <em
@@ -99,7 +103,7 @@
     tried-on.</em
   >
   <p>
-    Continue to knit in 2x2 ribbing until the cuff measures <span class="select-cuff-length"></span>.
+    Continue to knit in 2x2 ribbing until the cuff measures <span class="select-cuff-length pattern-value"></span>.
   </p>
   <h4 id="heel-opening">Prepare the heel opening:</h4>
   <em
@@ -108,11 +112,11 @@
   >
   <ul class="no-markers">
     <li>
-      <strong>Rd. 1</strong>: With the MC yarn, knit (no ribbing) across <span class="select-half-cast-on-sts"></span> sts. from
+      <strong>Rd. 1</strong>: With the MC yarn, knit (no ribbing) across <span class="select-half-cast-on-sts pattern-value"></span> sts. from
       BOR, then continue ribbing until to end.
     </li>
     <li>
-      <strong>Rd. 2</strong> (half rd.): With the CC yarn, knit (no ribbing) across <span class="select-half-cast-on-sts"></span> sts. from
+      <strong>Rd. 2</strong> (half rd.): With the CC yarn, knit (no ribbing) across <span class="select-half-cast-on-sts pattern-value"></span> sts. from
       BOR. Cut CC yarn.
     </li>
     <li>
@@ -132,8 +136,8 @@
     </li>
   </ul>
   <h4 id="foot">Foot:</h4>
-  <p>
-    Switch needle size at this point, depending on your measurements. I like to
+  <p><span id="switch-ndls"></span>
+     I like to
     switch to circular needles at this point.
   </p>
   <em
@@ -141,7 +145,7 @@
     tried-on</em
   >
   <p>
-    Continue in 2x2 ribbing until work measures <span class="select-foot-length"></span> from where
+    Continue in 2x2 ribbing until work measures <span class="select-foot-length pattern-value"></span> from where
     you prepared the forethought heel.
   </p>
   <h4 id="toe">Wedge toe:</h4>
@@ -149,14 +153,14 @@
   <ul class="no-markers">
     <li>Knit 3 rds.</li>
     <li>
-      <strong>Rd. 4</strong>: K1, SSK, knit <span class="select-half-cast-on-sts-minus-6"></span> sts., K2tog, K1. Then: K1,
-      SSK, knit <span class="select-half-cast-on-sts-minus-6"></span> sts., K2tog, K1.
+      <strong>Rd. 4</strong>: K1, SSK, knit <span class="select-half-cast-on-sts-minus-6 pattern-value"></span> sts., K2tog, K1. Then: K1,
+      SSK, knit <span class="select-half-cast-on-sts-minus-6 pattern-value"></span> sts., K2tog, K1.
     </li>
     <li><strong>Rd. 5</strong>: Knit.</li>
   </ul>
   <ul class="no-markers">
-    <li>Repeat rds. 4 & 5 until <span class="select-wedge-finish-sts-plus-12">44</span> sts. left in total.</li>
-    <li>Repeat rd. 4 for 3 rds; 12 sts. decreased, <span class="select-wedge-finish-sts">32</span> sts. left in total.</li>
+    <li>Repeat rds. 4 & 5 until <span class="select-wedge-finish-sts-plus-12 pattern-value">44</span> sts. left in total.</li>
+    <li>Repeat rd. 4 for 3 rds; 12 sts. decreased, <span class="select-wedge-finish-sts pattern-value">32</span> sts. left in total.</li>
     <li>Graft remaining sts. using <a href="https://youtu.be/-nlWKvrGp-4?si=YXxCUClryryDJ2yX&t=11" target="_blank" rel="noopener noreferrer">kitchener stitch</a>.</li>
   </ul>
 
@@ -165,7 +169,7 @@
   <ul class="no-markers">
     <li>Locate the center of the row you knit with contrasting yarn and carefully
     snip.Use the tip of a tapestry needle or knitting needle to pick this row out.</li>
-    <li>Place the live rows (secured with lifelines) back on your <span class="select-first-ndl-size"></span>
+    <li>Place the live rows (secured with lifelines) back on your <span class="select-first-ndl-size pattern-value"></span>
      needles.</li>
      <li>Follow the same instructions used for the wedge toe.</li>
      <li>Weave in ends with a tapestry needle. Blocking not needed.</li>
