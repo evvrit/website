@@ -1,7 +1,7 @@
 <head>
   <script src="socks.js">
   </script>
-  <link rel="stylesheet" href="socks.css" />
+  <link rel="stylesheet" href="styles/socks.css" />
 </head>
 
 <body>
@@ -27,27 +27,41 @@
     <form id="measurements-form">
       <ul class="no-markers">
         <li>
-          <label for="ankle-circumference">Ankle (or calf) circumference at desired cuff height:</label>
-          <input type="number" id="ankle-circumference" name="ankleCircumference" step="0.5" min="13" max="33" placeholder="25">
-          <span>cm</span>
+          <div class="form-outputs">
+            <label for="ankle-circumference">Ankle (or calf) circumference at desired cuff height:</label>
+            <output for="ankle-circumference">25</output>
+            <span>cm</span>
+          </div>
+          <input type="range" id="ankle-circumference" name="ankleCircumference" step="0.5" min="13" max="33" value="25">
         </li>
         <li>
-          <label for="cuff-length">Desired cuff length:</label>
-          <input type="number" id="cuff-length" name="cuffLength" step="0.5" min="7" max="18" placeholder="12">
-          <span>cm</span>
+          <div class="form-outputs">
+            <label for="cuff-length">Desired cuff length:</label>
+            <output for="cuff-length">12</output>
+            <span>cm</span>
+          </div>
+          <input type="range" id="cuff-length" name="cuffLength" step="0.5" min="7" max="18" value="12">
         </li>
         <li>
-          <label for="foot-length">Length of foot:</label>
-          <input type="number" id="foot-length" name="footLength" step="0.5" min="20" placeholder="28">
-          <span>cm</span>
+          <div class="form-outputs">
+            <label for="foot-length">Length of foot:</label>
+            <output for="foot-length">28</output>
+            <span>cm</span>
+          </div>
+          <input type="range" id="foot-length" name="footLength" step="0.5" min="20" value="28">
         </li>
         <li>
-          <label for="foot-circumference">Foot circumference at widest part:</label>
-          <input type="number" id="foot-circumference" name="footCircumference" step="0.5" min="13" max="33" placeholder="27">
-          <span>cm</span>
+          <div class="form-outputs">
+            <label for="foot-circumference">Foot circumference at widest part:</label>
+            <output for="foot-circumference">27</output>
+            <span>cm</span>
+          </div>
+          <input type="range" id="foot-circumference" name="footCircumference" step="0.5" min="13" max="33" value="27">
+        </li>
+        <li>
+          <p class="hidden" id="size-note">If the ankle/calf and foot circumferences differ by more than 4cm, you will need to add decreases along the cuff according to your stitch gauge (for target number of stitches, based on smaller circumference) and row gauge (to determine decrease rate). I may eventually add detailed instructions.</p>
         </li>
       </ul>
-      <button type="submit">Calculate Pattern</button>
     </form>
   </div>
 

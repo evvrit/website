@@ -9,19 +9,24 @@
       loadAbbreviations();
       updatePattern();
 
-      const form = document.getElementById('measurements-form');
+      // Add input event listeners for real-time updates
+      const inputs = [
+        { id: 'ankle-circumference', key: 'ankleCircumference' },
+        { id: 'cuff-length', key: 'cuffLength' },
+        { id: 'foot-length', key: 'footLength' },
+        { id: 'foot-circumference', key: 'footCircumference' }
+      ];
 
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
+      inputs.forEach(input => {
+        const element = document.getElementById(input.id);
+        const output = document.querySelector(`output[for="${input.id}"]`);
 
-        measurements.ankleCircumference = parseFloat(document.getElementById('ankle-circumference').value);
-        measurements.cuffLength = parseFloat(document.getElementById('cuff-length').value);
-        measurements.footLength = parseFloat(document.getElementById('foot-length').value);
-        measurements.footCircumference = parseFloat(document.getElementById('foot-circumference').value);
-
-        console.log('Measurements captured:', measurements);
-
-        updatePattern();
+        element.addEventListener('input', function(event) {
+          const value = parseFloat(event.target.value);
+          measurements[input.key] = value;
+          output.value = value;
+          updatePattern();
+        });
       });
     });
 
@@ -129,6 +134,9 @@
       const diff = Math.abs(measurements.ankleCircumference - measurements.footCircumference);
       const biggerCircumference = Math.max(measurements.ankleCircumference, measurements.footCircumference);
 
+      const sizeNote = document.getElementById('size-note');
+      sizeNote.classList.add('hidden');
+
       let inputNeedleSize;
       if (diff < 1) {
         inputNeedleSize = ['2.25mm'];
@@ -136,8 +144,11 @@
         inputNeedleSize = ['2.00mm', '2.25mm'];
       } else if (diff >= 2 && diff < 3) {
         inputNeedleSize = ['2.00mm', '2.5mm'];
-      } else if (diff >= 3) {
+      } else if (diff >= 3 && diff < 4) {
         inputNeedleSize = ['2.00mm', '2.75mm'];
+      } else if (diff >= 4) {
+        inputNeedleSize = ['2.00mm', '2.75mm'];
+        sizeNote.classList.remove('hidden');
       }
 
       document.getElementById('select-ndl-size').textContent = inputNeedleSize.join(' and ');
@@ -148,17 +159,17 @@
 
       if (measurements.ankleCircumference >= 13 && measurements.ankleCircumference <= 16) {
         selectCastOnSts = 44;
-      } else if (measurements.ankleCircumference >= 17 && measurements.ankleCircumference <= 19) {
+      } else if (measurements.ankleCircumference >= 17 && measurements.ankleCircumference <= 19.9) {
         selectCastOnSts = 52;
-      } else if (measurements.ankleCircumference >= 20 && measurements.ankleCircumference <= 22) {
+      } else if (measurements.ankleCircumference >= 20 && measurements.ankleCircumference <= 22.9) {
         selectCastOnSts = 64;
-      } else if (measurements.ankleCircumference >= 23 && measurements.ankleCircumference <= 24) {
+      } else if (measurements.ankleCircumference >= 23 && measurements.ankleCircumference <= 24.9) {
         selectCastOnSts = 68;
-      } else if (measurements.ankleCircumference >= 25 && measurements.ankleCircumference <= 26) {
+      } else if (measurements.ankleCircumference >= 25 && measurements.ankleCircumference <= 26.9) {
         selectCastOnSts = 76;
-      } else if (measurements.ankleCircumference >= 27 && measurements.ankleCircumference <= 29) {
+      } else if (measurements.ankleCircumference >= 27 && measurements.ankleCircumference <= 29.9) {
         selectCastOnSts = 84;
-      } else if (measurements.ankleCircumference >= 30 && measurements.ankleCircumference <= 33) {
+      } else if (measurements.ankleCircumference >= 30 && measurements.ankleCircumference <= 33.9) {
         selectCastOnSts = 92;
       }
 

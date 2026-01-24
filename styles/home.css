@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5 {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  /* background-color: #eff7cf; */
+  background-color: #eff7cf;
 }
 
 .home-title {
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5 {
 
 .home-links {
   margin-top: 1rem;
-  /* background-color: #bad9b5; */
+  background-color: #bad9b5;
 }
 
 .wide-content-tray {
@@ -113,4 +113,4 @@ ul.directory-list li::marker {
   background: white;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=home.css.map */
