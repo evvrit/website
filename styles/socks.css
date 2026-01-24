@@ -152,6 +152,10 @@ p#size-note {
 .abbrev-wrapper {
   position: relative;
   display: inline-block;
+  font-size: inherit;
+  vertical-align: baseline;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 .abbrev-wrapper:hover .abbrev-tooltip {
   visibility: visible;
@@ -160,19 +164,21 @@ p#size-note {
 
 .abbrev-icon {
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  line-height: 1rem;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.75em;
   font-weight: bold;
   font-style: normal;
   color: #666;
   border: 1px solid #666;
   border-radius: 50%;
-  margin-left: 3px;
+  margin-left: 0.2em;
   cursor: help;
-  vertical-align: text-bottom;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.1em;
   font-family: serif;
 }
 

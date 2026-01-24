@@ -155,10 +155,10 @@
       }
 
       let selectFirstNdlSize;
-      let selectSecondNdlSize;
       if (inputNeedleSize.length === 1) {
         selectFirstNdlSize = inputNeedleSize[0];
       } else {
+        let selectSecondNdlSize;
         const needleSizes = inputNeedleSize.map(size => parseFloat(size.replace('mm', '')));
         if (measurements.ankleCircumference === biggerCircumference) {
           selectFirstNdlSize = Math.max(...needleSizes).toFixed(2) + 'mm';
@@ -167,11 +167,11 @@
           selectFirstNdlSize = Math.min(...needleSizes).toFixed(2) + 'mm';
           selectSecondNdlSize = Math.max(...needleSizes).toFixed(2) + 'mm';
         }
+        secondNdl.innerHTML = `Switch to <span class="select-second-ndl-size pattern-value">${selectSecondNdlSize}</span> needles.`;
+        secondNdl.classList.remove('hidden');
       }
 
       selectNdlSize.textContent = `${inputNeedleSize.length === 1 ? "size" : "sizes"} ${inputNeedleSize.join(" and ")}`;
-      secondNdl.innerHTML = `Switch to <span class="select-second-ndl-size pattern-value">${selectSecondNdlSize}</span> needles.`;
-      secondNdl.classList.remove('hidden');
 
       let selectCastOnSts;
 
