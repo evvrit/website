@@ -1,0 +1,71 @@
+// Shared Color Palette
+$cream: #eff7cf;
+$celadon: #bad9b5;
+$ecru: #aba361;
+$garnet: #732c2c;
+$chocolate-cosmos: #420c14;
+
+// Base body styles
+body {
+  font-family: "Nunito Sans", sans-serif;
+  margin: 0 auto;
+  line-height: 1.6;
+  background-color: #ffffff;
+  font-size: 1.15rem;
+}
+
+// Base heading styles
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+.page-title {
+  margin-bottom: 2em;
+}
+
+.img-container {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+// Utility classes
+.hidden {
+  display: none;
+}
+
+// Content trays - responsive containers with different widths
+.content-tray-sm {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 20px;
+}
+
+.content-tray-md {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-tray-lg {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 20px;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+}
+
+#back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1em;
+  color: $chocolate-cosmos;
+  text-decoration: none;
+  font-weight: bold;
+}
