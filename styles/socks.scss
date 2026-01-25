@@ -1,4 +1,6 @@
-// Color Palette
+@use 'shared' as *;
+
+// Page-specific colors
 $purple: #961b77;
 $red-brown: #822117;
 $blue: #5170ff;
@@ -11,20 +13,20 @@ $off-white: #f9f9f9;
 $container-padding: 20px;
 $form-margin: 60px auto;
 
+// Page-specific overrides
+body {
+  margin: 2% auto;
+  max-width: 100ch;
+  line-height: 1.35;
+  position: relative;
+}
+
+// Socks page specific styles
 h1#page-title {
   font-family: "Major Mono Display", monospace;
   font-weight: 400;
   font-style: normal;
   text-align: center;
-}
-
-body {
-  margin: 2% auto;
-  padding: $container-padding;
-  max-width: 100ch;
-  font-family: "Nunito sans", sans-serif;
-  line-height: 1.35;
-  position: relative;
 }
 
 a {
@@ -55,10 +57,6 @@ h4.jump-target {
 #face {
   max-width: 100px;
   padding: 0 calc(50% - 50px)
-}
-
-.hidden {
-  display: none;
 }
 
 .section-nav {
@@ -105,13 +103,10 @@ h4.jump-target {
   color: $blue;
 }
 
-.form-container {
+// Override medium tray background for socks page form
+.content-tray-md {
   background-color: $off-white;
-  padding: $container-padding;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin: $form-margin;
-  max-width: 600px;
 }
 
 ul.no-markers {
@@ -198,7 +193,7 @@ p#size-note {
   height: 1em;
   line-height: 1em;
   text-align: center;
-  font-size: 0.75em;
+  font-size: 1em;
   font-weight: bold;
   font-style: normal;
   color: $medium-gray;

@@ -1,37 +1,25 @@
-// Color Palette
-$cream: #eff7cf;
-$celadon: #bad9b5;
-$ecru: #aba361;
-$garnet: #732c2c;
-$chocolate-cosmos: #420c14;
-
-body {
-  font-family: "Nunito Sans", sans-serif;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
-  line-height: 1.6;
-}
+@use 'shared' as *;
 
 canvas {
   display: block;
 }
 
-h1, h2, h3, h4, h5 {
-  font-weight: normal;
+// Home page specific components
+.home-grid {
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: 80vw 1fr;
+  justify-items: center;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-.container {
-  background-color: white;
-  padding: 20px;
-}
-
-.content-tray {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: $cream;
+.home-collage {
+  max-height: 80vh;
+  aspect-ratio: inherit;
+  margin: 1em;
 }
 
 .home-title {
@@ -43,14 +31,13 @@ h1, h2, h3, h4, h5 {
   background-color: $celadon;
 }
 
-.wide-content-tray {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: $cream;
+.home-links, .home-title {
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
 }
+
 .directory {
   background-color: $celadon;
+  margin-top: 1rem;
 }
 
 h1 {
@@ -65,14 +52,15 @@ h1 {
 
 .links a {
   color: $chocolate-cosmos;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 16px;
   display: block;
-  margin: 10px 0;
+  margin: 1rem 0;
+  line-height: 1.3;
 }
 
 .links a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .site-title {
@@ -87,6 +75,7 @@ h1 {
 
 svg.pronunciation-btn {
   fill: $ecru;
+  margin-left: 0.625em;
 
   &:hover {
     fill: $chocolate-cosmos;
@@ -96,10 +85,6 @@ svg.pronunciation-btn {
 .directory-title {
   background-color: $cream;
   text-align: center;
-}
-
-.directory {
-  margin-top: 1rem;
 }
 
 ul.directory-list {

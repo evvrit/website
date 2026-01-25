@@ -1,0 +1,142 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+  margin: 0 auto;
+  line-height: 1.6;
+  background-color: #ffffff;
+  font-size: 1.15rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+.page-title {
+  margin-bottom: 2em;
+}
+
+.img-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.content-tray-sm {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 20px;
+}
+
+.content-tray-md {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-tray-lg {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 20px;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+}
+
+#back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1em;
+  color: #420c14;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body {
+  max-width: 800px;
+}
+
+.youtube-comment {
+  display: flex;
+  gap: 12px;
+  margin: 1.5em;
+  padding: 12px 16px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  color: #0f0f0f;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.youtube-comment .comment-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  align-self: flex-start;
+}
+.youtube-comment .comment-content {
+  flex: 1;
+}
+.youtube-comment .comment-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.youtube-comment .comment-header .comment-author {
+  font-weight: 500;
+  color: #0f0f0f;
+  font-size: 0.9em;
+}
+.youtube-comment .comment-header .comment-date {
+  color: #606060;
+  font-size: 0.85em;
+}
+.youtube-comment .comment-text {
+  margin-bottom: 8px;
+  color: #0f0f0f;
+  font-size: 0.95em;
+}
+.youtube-comment .comment-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85em;
+}
+.youtube-comment .comment-actions .action-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #606060;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  font-family: inherit;
+  transition: color 0.1s;
+}
+.youtube-comment .comment-actions .action-button:hover {
+  color: #0f0f0f;
+}
+.youtube-comment .comment-actions .action-button svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+#boom {
+  color: #732c2c;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=sweater-curse.css.map */
