@@ -28,7 +28,28 @@ canvas {
 
 .home-links {
   margin-top: 1rem;
-  background-color: $celadon;
+  background-color: $ecru;
+
+  .links {
+    line-height: 2;
+  }
+
+  .links a {
+    color: $chocolate-cosmos;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    margin: 1rem 0;
+    line-height: 1.3;
+  }
+
+  .links a:hover {
+    text-decoration: underline;
+  }
+
+  &.--outlinks {
+    background-color: $celadon;
+  }
 }
 
 .home-links, .home-title {
@@ -46,25 +67,8 @@ h1 {
   font-size: 24px;
 }
 
-.links {
-  line-height: 2;
-}
-
-.links a {
-  color: $chocolate-cosmos;
-  text-decoration: none;
-  font-size: 16px;
-  display: block;
-  margin: 1rem 0;
-  line-height: 1.3;
-}
-
-.links a:hover {
-  text-decoration: underline;
-}
-
 .site-title {
-  color: $ecru;
+  color: $chocolate-cosmos;
   text-align: center;
 
   &--phonetic {
