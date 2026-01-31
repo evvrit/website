@@ -6,7 +6,6 @@
     };
 
     document.addEventListener('DOMContentLoaded', function() {
-      loadAbbreviations();
       updatePattern();
 
       // Add input event listeners for real-time updates
@@ -29,105 +28,6 @@
         });
       });
     });
-
-    function loadAbbreviations() {
-      fetch('abbrevs.json')
-        .then(response => response.json())
-        .then(abbrevs => {
-          addTooltipsToDocument(abbrevs);
-        })
-        .catch(error => console.error('Error loading abbreviations:', error));
-    }
-
-    function addTooltipsToDocument(abbrevs) {
-      const body = document.body;
-      const walker = document.createTreeWalker(
-        body,
-        NodeFilter.SHOW_TEXT,
-        {
-          acceptNode: function(node) {
-            if (node.parentElement.classList.contains('abbrev-wrapper') ||
-                node.parentElement.classList.contains('abbrev-tooltip')) {
-              return NodeFilter.FILTER_REJECT;
-            }
-            return NodeFilter.FILTER_ACCEPT;
-          }
-        }
-      );
-
-      const nodesToProcess = [];
-      let currentNode;
-      while (currentNode = walker.nextNode()) {
-        nodesToProcess.push(currentNode);
-      }
-
-      const processedAbbrevs = new Set();
-
-      nodesToProcess.forEach(node => {
-        let text = node.textContent;
-        let hasAbbrev = false;
-
-        for (const [abbrev, fullForm] of Object.entries(abbrevs)) {
-          if (text.includes(abbrev) && !processedAbbrevs.has(abbrev)) {
-            hasAbbrev = true;
-            break;
-          }
-        }
-
-        if (hasAbbrev) {
-          const fragment = document.createDocumentFragment();
-          let lastIndex = 0;
-
-          const pattern = new RegExp('\\b(' + Object.keys(abbrevs).join('|') + ')\\b', 'g');
-          let match;
-          const matches = [];
-
-          while ((match = pattern.exec(text)) !== null) {
-            if (!processedAbbrevs.has(match[0])) {
-              matches.push({
-                index: match.index,
-                text: match[0],
-                fullForm: abbrevs[match[0]]
-              });
-              processedAbbrevs.add(match[0]);
-            }
-          }
-
-          if (matches.length > 0) {
-            matches.forEach((match, i) => {
-              if (match.index > lastIndex) {
-                fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
-              }
-
-              const wrapper = document.createElement('span');
-              wrapper.className = 'abbrev-wrapper';
-
-              const abbrevText = document.createTextNode(match.text);
-              wrapper.appendChild(abbrevText);
-
-              const icon = document.createElement('span');
-              icon.className = 'abbrev-icon';
-              icon.textContent = 'i';
-              wrapper.appendChild(icon);
-
-              const tooltip = document.createElement('span');
-              tooltip.className = 'abbrev-tooltip';
-              tooltip.textContent = match.fullForm;
-              wrapper.appendChild(tooltip);
-
-              fragment.appendChild(wrapper);
-              lastIndex = match.index + match.text.length;
-            });
-
-            if (lastIndex < text.length) {
-              fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
-            }
-
-            node.parentNode.replaceChild(fragment, node);
-          }
-        }
-      });
-    }
 
     function updatePattern() {
       const diff = Math.abs(measurements.ankleCircumference - measurements.footCircumference);
