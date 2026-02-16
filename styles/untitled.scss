@@ -1,0 +1,50 @@
+@use 'shared' as *;
+
+h4 {
+  margin-top: 2.5em;
+}
+
+blockquote {
+  border-left: 3px solid $celadon;
+  margin: 1.5em 0;
+  padding: 0.5em 1.5em;
+  color: #333;
+}
+
+blockquote.epigraph {
+  border-left: none;
+  text-align: center;
+  font-style: italic;
+
+  cite {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #666;
+  }
+}
+
+.definition {
+  text-align: center;
+  margin: 2em 0;
+
+  .term {
+    font-style: italic;
+    margin-bottom: 0.25em;
+  }
+}
+
+.interlude {
+  text-align: center;
+  font-style: italic;
+}
+
+.footnotes {
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 2em;
+
+  p {
+    margin: 0.25em 0;
+  }
+}
