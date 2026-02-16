@@ -1,0 +1,108 @@
+@use 'shared' as *;
+
+sup {
+  font-size: 0.6em;
+}
+
+h4 {
+  margin-top: 2.5em;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+blockquote {
+  border-left: 3px solid $celadon;
+  margin: 1.5em 0;
+  padding: 0.5em 1.5em;
+  color: #333;
+}
+
+blockquote.epigraph {
+  border-left: none;
+  text-align: center;
+  font-style: italic;
+
+  cite {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+    color: #666;
+  }
+}
+
+.definition-container {
+  margin: 3em auto 0 auto;
+  width: fit-content;
+
+  .definition {
+    text-align: center;
+    border-radius: 8px;
+    background-color: $pale-celadon;
+    padding: 1em;
+    box-shadow: 0 1px 4px $celadon;
+
+    .term {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.25em;
+    }
+  }
+
+  .citation {
+    color: #666;
+    text-align:right;
+    display: block;
+    margin-bottom: 3em;
+  }
+}
+
+.image-cards {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin: 2em 0;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    small.imgcaption {
+      display: block;
+      text-align: center;
+      margin-top: 0.5em;
+      font-size: 0.9em;
+      color: #555;
+    }
+  }
+}
+
+.interlude {
+  text-align: center;
+  font-style: italic;
+}
+
+.divider {
+  text-align: center;
+  margin: 2em 0;
+  color: #999;
+  font-size: 1.2em;
+  letter-spacing: 0.5em;
+}
+
+.footnotes {
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 2em;
+
+  p {
+    margin: 0.25em 0;
+  }
+}

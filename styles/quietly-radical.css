@@ -1,0 +1,178 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+  margin: 0 auto;
+  line-height: 1.6;
+  background-color: #ffffff;
+  font-size: 1.15rem;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+.page-title {
+  margin-bottom: 0.5em;
+}
+
+p.page-date {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a86b6b;
+  margin-bottom: 2em;
+}
+
+a {
+  color: #2988b8;
+  text-decoration: none;
+  transition: color underline 0.2s ease;
+}
+a:hover {
+  color: #4d93d1;
+  text-decoration: underline;
+}
+
+.img-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.content-tray-sm {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 20px;
+}
+
+.content-tray-md {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-tray-lg {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 20px;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+}
+
+#back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 1em;
+  color: #420c14;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+sup {
+  font-size: 0.6em;
+}
+
+h4 {
+  margin-top: 2.5em;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+blockquote {
+  border-left: 3px solid #bad9b5;
+  margin: 1.5em 0;
+  padding: 0.5em 1.5em;
+  color: #333;
+}
+
+blockquote.epigraph {
+  border-left: none;
+  text-align: center;
+  font-style: italic;
+}
+blockquote.epigraph cite {
+  display: block;
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.definition-container {
+  margin: 3em auto 0 auto;
+  width: fit-content;
+}
+.definition-container .definition {
+  text-align: center;
+  border-radius: 8px;
+  background-color: #e5f3e3;
+  padding: 1em;
+  box-shadow: 0 1px 4px #bad9b5;
+}
+.definition-container .definition .term {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.25em;
+}
+.definition-container .citation {
+  color: #666;
+  text-align: right;
+  display: block;
+  margin-bottom: 3em;
+}
+
+.image-cards {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin: 2em 0;
+}
+.image-cards a {
+  text-decoration: none;
+  color: inherit;
+}
+.image-cards a img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+.image-cards a small.imgcaption {
+  display: block;
+  text-align: center;
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.interlude {
+  text-align: center;
+  font-style: italic;
+}
+
+.divider {
+  text-align: center;
+  margin: 2em 0;
+  color: #999;
+  font-size: 1.2em;
+  letter-spacing: 0.5em;
+}
+
+.footnotes {
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 2em;
+}
+.footnotes p {
+  margin: 0.25em 0;
+}
+
+/*# sourceMappingURL=quietly-radical.css.map */
