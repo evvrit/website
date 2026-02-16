@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>very pink</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.youtube.com">
+  <link rel="preconnect" href="https://i.ytimg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Trocchi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/very-pink.css" />
+</head>
+<body>
+  <a href="/" id="back-button">&nbsp;<&nbsp;</a>
+  <div class="video-backdrop"></div>
+  <div class="video-container">
+    <div class="video-wrapper video-top">
+      <iframe
+        id="player-top"
+        src="https://www.youtube.com/embed/YL4DLMdO6vQ?start=425&end=434&enablejsapi=1&rel=0&modestbranding=1"
+        title="YouTube video player"
+        frameborder="0"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+      <div class="video-overlay">
+        <span class="overlay-text">but you saw how good it looks.</span>
+      </div>
+    </div>
+    <div class="video-wrapper video-bottom">
+      <iframe
+        id="player-bottom"
+        src="https://www.youtube.com/embed/YL4DLMdO6vQ?start=517&end=525&enablejsapi=1&rel=0&modestbranding=1"
+        title="YouTube video player"
+        frameborder="0"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+      <div class="video-overlay">
+        <span class="overlay-text">😎</span>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="scripts/very-pink.js"></script>
+</body>
+</html>
