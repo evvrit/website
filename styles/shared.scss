@@ -1,9 +1,36 @@
 // Shared Color Palette
+// Original colors
 $cream: #eff7cf;
 $celadon: #bad9b5;
 $ecru: #aba361;
 $garnet: #732c2c;
 $chocolate-cosmos: #420c14;
+
+// Extended palette - greens
+$pale-celadon: #e5f3e3;        // lighter, softer celadon
+$mint: #d4ead4;                // pale mint between cream and pale-celadon
+$sage: #a8c9a0;                // deeper, grayer celadon
+$moss: #8db387;                // deepest green, earthy
+
+// Extended palette - earth tones
+$ivory: #f7f4e8;               // warmer, creamier neutral
+$sand: #d9d1b8;                // light warm neutral
+$wheat: #c4b896;               // warmer ecru
+$clay: #8d7854;                // deeper ecru/brown
+
+// Extended palette - reds/roses
+$blush: #d4a8a8;               // pale dusty rose
+$rose: #a86b6b;                // medium rose, lighter garnet
+$burgundy: #5a2323;            // between garnet and chocolate-cosmos
+$mahogany: #2d0a0f;            // deepest brown-red
+
+// Extended palette - blues
+$powder: #dae8f0;              // pale powder blue
+$sky: #c4d6e3;                 // soft sky blue
+$periwinkle: #a8b9cc;          // muted periwinkle
+$sky: #4d93d1;                 // deepest vibrant blue
+$steel: #556a7a;               // deep steel blue
+$blue: #2988b8;                // blue
 
 // Base body styles
 body {
@@ -20,7 +47,26 @@ h1, h2, h3, h4, h5 {
 }
 
 .page-title {
+  margin-bottom: 0.5em;
+}
+
+p.page-date {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $rose;
   margin-bottom: 2em;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  transition: color underline 0.2s ease;
+
+  &:hover {
+    color: $sky;
+    text-decoration: underline;
+  }
 }
 
 .img-container {
