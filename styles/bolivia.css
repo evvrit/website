@@ -1,0 +1,49 @@
+figcaption {
+  margin-top: 0.5em;
+  font-size: 0.75em;
+  color: #777;
+  text-align: center;
+}
+
+.image-cards figure {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+.image-cards figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.photo-single {
+  margin: 2em 0;
+  text-align: center;
+}
+.photo-single img {
+  max-width: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.photo-collage {
+  margin: 2em 0;
+}
+.photo-collage .image-cards {
+  margin: 0;
+}
+
+.photo-single.--sm,
+.photo-collage.--sm,
+.image-cards.--sm {
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photo-single.--wide,
+.photo-collage.--wide,
+.image-cards.--wide {
+  margin-left: -15vw;
+  margin-right: -15vw;
+}
