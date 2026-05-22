@@ -40,6 +40,13 @@ figcaption {
   margin-left: auto;
   margin-right: auto;
 }
+@media (max-width: 600px) {
+  .photo-single.--sm,
+  .photo-collage.--sm,
+  .image-cards.--sm {
+    max-width: 65%;
+  }
+}
 
 .photo-single.--wide,
 .photo-collage.--wide,
@@ -47,3 +54,13 @@ figcaption {
   margin-left: -15vw;
   margin-right: -15vw;
 }
+@media (max-width: 1000px) {
+  .photo-single.--wide,
+  .photo-collage.--wide,
+  .image-cards.--wide {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
+/*# sourceMappingURL=bolivia.css.map */

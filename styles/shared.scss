@@ -115,3 +115,7 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
+
+#back-button + * {
+  margin-top: 4rem;
+}

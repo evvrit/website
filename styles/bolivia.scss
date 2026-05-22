@@ -46,6 +46,10 @@ figcaption {
   max-width: 380px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 600px) {
+    max-width: 65%;
+  }
 }
 
 .photo-single.--wide,
@@ -53,4 +57,9 @@ figcaption {
 .image-cards.--wide {
   margin-left: -15vw;
   margin-right: -15vw;
+
+  @media (max-width: 1000px) {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }

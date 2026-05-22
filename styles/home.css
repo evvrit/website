@@ -76,6 +76,10 @@ a:hover {
   font-weight: bold;
 }
 
+#back-button + * {
+  margin-top: 4rem;
+}
+
 canvas {
   display: block;
 }
