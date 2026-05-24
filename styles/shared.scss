@@ -32,6 +32,50 @@ $sky: #4d93d1;                 // deepest vibrant blue
 $steel: #556a7a;               // deep steel blue
 $blue: #2988b8;                // blue
 
+// Pops of color
+$yellow: #d9c939;
+$red: #c22222;
+
+$colors: (
+  "cream": $cream,
+  "celadon": $celadon,
+  "ecru": $ecru,
+  "garnet": $garnet,
+  "chocolate-cosmos": $chocolate-cosmos,
+  "pale-celadon": $pale-celadon,
+  "mint": $mint,
+  "sage": $sage,
+  "moss": $moss,
+  "ivory": $ivory,
+  "sand": $sand,
+  "wheat": $wheat,
+  "clay": $clay,
+  "blush": $blush,
+  "rose": $rose,
+  "burgundy": $burgundy,
+  "mahogany": $mahogany,
+  "powder": $powder,
+  "sky": $sky,
+  "periwinkle": $periwinkle,
+  "steel": $steel,
+  "blue": $blue,
+  "yellow": $yellow,
+  "red": $red
+);
+
+@each $name, $color in $colors {
+  .c-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+
+  .bt-#{$name} {
+    border-top: 10px solid $color;
+  }
+}
+
 // Base body styles
 body {
   font-family: "Nunito Sans", sans-serif;
@@ -102,8 +146,9 @@ a {
 }
 
 .container {
-  background-color: white;
+  background-color: #fff;
   padding: 20px;
+  width: calc(100% - 40px);
 }
 
 #back-button {
