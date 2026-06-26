@@ -1,0 +1,32 @@
+  :root {
+    --sans-font: "Figtree", "Manjari", "Nimbus Sans L", "Noto Sans", "Segoe UI", Helvetica,
+    "Helvetica Neue", sans-serif;
+    --serif-font: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --mono-font: "Arvo", Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    --standard-border-radius: 0px;
+    --border-width: 1px;
+
+
+    color-scheme: light;
+    --bg: #fff;
+    --accent-bg: #f5f7ff;
+    --text: #212121;
+    --text-light: #585858;
+    --accent: #0d47a1;
+    --accent-hover: #1266e2;
+    --accent-text: var(--bg);
+    --code: #d81b60;
+    --preformatted: #444;
+    --marked: #ffdd33;
+    --disabled: #efefef;
+  }
+
+  #evvrit {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+  }
+
+  h4, h5 {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
