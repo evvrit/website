@@ -1,27 +1,13 @@
-@use 'shared' as *;
+// @use 'shared' as *;
 
 // Page-specific colors
-$purple: #961b77;
-$red-brown: #822117;
 $blue: #5170ff;
-$dark-gray: #333;
-$medium-gray: #666;
-$light-gray: #ccc;
-$off-white: #f9f9f9;
-
-// Spacing
-$container-padding: 20px;
-$form-margin: 60px auto;
 
 // Page-specific overrides
 body {
-  margin: 2% auto;
-  max-width: 100ch;
-  line-height: 1.35;
   position: relative;
 }
 
-// Socks page specific styles
 h1#page-title {
   font-family: "Arvo", serif;
   font-weight: 400;
@@ -29,16 +15,12 @@ h1#page-title {
   text-align: center;
 }
 
-a {
-  color: $purple;
-
-  &:visited {
-    color: $red-brown;
-  }
-}
-
 h2 {
   text-align: center;
+}
+
+h4 {
+  color: var(--accent);
 }
 
 h4.jump-target {
@@ -46,17 +28,13 @@ h4.jump-target {
 }
 
 #footer {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
   max-width: 100px;
+  margin: 0 auto;
 }
 
 #face {
   max-width: 100px;
-  padding: 0 calc(50% - 50px)
+  margin: 0 auto;
 }
 
 .section-nav {
@@ -78,17 +56,11 @@ h4.jump-target {
 
   a {
     text-decoration: none;
-    color: $medium-gray;
     font-size: 0.85em;
     display: block;
     padding: 4px 8px;
     border-left: 2px solid transparent;
     transition: all 0.2s;
-
-    &:hover {
-      color: $dark-gray;
-      border-left-color: $dark-gray;
-    }
   }
 }
 
@@ -103,12 +75,6 @@ h4.jump-target {
   color: $blue;
 }
 
-// Override medium tray background for socks page form
-.content-tray-md {
-  background-color: $off-white;
-  margin: $form-margin;
-}
-
 ul.no-markers {
   padding-left: 0px;
 
@@ -118,46 +84,48 @@ ul.no-markers {
   }
 }
 
+#form {
+  padding: 2em;
+  border-radius: 8px;
+  margin: 2em 0;
+  border: 1px solid var(--accent);
+}
 #measurements-form {
-  ul.no-markers {
-    display: grid;
-
-    li {
-      display: contents;
-    }
-  }
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 2em;
 
   label {
     text-align: left;
   }
 
-  input[type="range"] {
-    width: 80%;
-    padding: 6px 8px;
-    border: 1px solid $light-gray;
-    border-radius: 4px;
-    font-size: 1em;
-    accent-color: $medium-gray;
-  }
-
   button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: $dark-gray;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1em;
 
-    &:hover {
-      background-color: #555;
-    }
   }
 
   .form-outputs {
+    gap: 1em;
+  }
+
+  .form-inputs {
     display: flex;
     gap: 1em;
+    justify-content: end;
+
+    input {
+      width: clamp(50px, 50%, 100px);
+    }
+
+    span {
+      align-self: center;
+    }
   }
 
   output {
@@ -168,7 +136,7 @@ ul.no-markers {
 
 p#size-note {
   font-size: 0.9em;
-  color: $medium-gray;
+  // color: $medium-gray;
   margin-top: 10px;
   font-style: italic;
 }

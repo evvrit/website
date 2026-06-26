@@ -1,7 +1,7 @@
   :root {
     --sans-font: "Figtree", "Manjari", "Nimbus Sans L", "Noto Sans", "Segoe UI", Helvetica,
     "Helvetica Neue", sans-serif;
-    --serif-font: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --serif-font: "Radley", Cambria, "Times New Roman", Times, serif;
     --mono-font: "Arvo", Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     --standard-border-radius: 0px;
     --border-width: 1px;
@@ -12,10 +12,10 @@
     --accent-bg: #f5f7ff;
     --text: #212121;
     --text-light: #585858;
-    --accent: #0d47a1;
-    --accent-hover: #1266e2;
+    --accent: #2F3061;
+    --accent-hover: #0E34A0;
     --accent-text: var(--bg);
-    --code: #d81b60;
+    --accent-visited: #7F7B82;
     --preformatted: #444;
     --marked: #ffdd33;
     --disabled: #efefef;
@@ -29,15 +29,32 @@
   h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    margin-top: 0;
     font-weight: 500;
-    /* font-family: "Arvo", serif; */
   }
 
   h4, h5 {
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.92rem;
+    font-family: var(--serif-font);
+    margin-bottom: 2.5em;
+    color: var(--accent);
   }
 
   img {
     opacity: 1;
+  }
+
+  .home-button {
+    width: 25px;
+    height: 25px;
+    margin-top: 2em;
+  }
+
+  a {
+    color: var(--accent);
+  }
+
+  a:visited {
+    color: var(--text);
   }

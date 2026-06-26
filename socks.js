@@ -18,12 +18,10 @@
 
       inputs.forEach(input => {
         const element = document.getElementById(input.id);
-        const output = document.querySelector(`output[for="${input.id}"]`);
 
         element.addEventListener('input', function(event) {
           const value = parseFloat(event.target.value);
           measurements[input.key] = value;
-          output.value = value;
           updatePattern();
         });
       });

@@ -1,10 +1,5 @@
 @use 'shared' as *;
 
-// Page-specific overrides
-body {
-  max-width: 800px;
-}
-
 // YouTube comment style
 .youtube-comment {
   display: flex;
@@ -89,7 +84,6 @@ body {
 
 
 #boom {
-  color: $garnet;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--accent);
   font-weight: bold;
 }
