@@ -286,14 +286,6 @@
   border-top: 10px solid #c22222;
 }
 
-body {
-  font-family: "Arvo", serif;
-  margin: 0 auto;
-  line-height: 1.6;
-  background-color: #ffffff;
-  font-size: 1.15rem;
-}
-
 h1, h2, h3, h4, h5 {
   font-weight: normal;
 }
@@ -468,5 +460,3 @@ blockquote.epigraph cite {
 .footnotes p {
   margin: 0.25em 0;
 }
-
-/*# sourceMappingURL=quietly-radical.css.map */

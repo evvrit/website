@@ -286,14 +286,6 @@
   border-top: 10px solid #c22222;
 }
 
-body {
-  font-family: "Arvo", serif;
-  margin: 0 auto;
-  line-height: 1.6;
-  background-color: #ffffff;
-  font-size: 1.15rem;
-}
-
 h1, h2, h3, h4, h5 {
   font-weight: normal;
 }
@@ -449,5 +441,3 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 }
-
-/*# sourceMappingURL=sweater-curse.css.map */

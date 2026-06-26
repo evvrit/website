@@ -26,7 +26,18 @@
     font-weight: 400;
   }
 
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    /* font-family: "Arvo", serif; */
+  }
+
   h4, h5 {
     text-transform: uppercase;
     font-size: 0.85rem;
+  }
+
+  img {
+    opacity: 1;
   }
