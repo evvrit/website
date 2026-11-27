@@ -1,3 +1,9 @@
+/* Snug socks Pattern. */
+
+:root {
+  --pattern-value: #5170ff;
+}
+
 h1#page-title {
   text-align: center;
 }
@@ -47,7 +53,7 @@ h3.jump-target {
 }
 .pattern-value {
   font-weight: bold;
-  color: #5170ff;
+  color: var(--pattern-value);
 }
 
 ul.no-markers {
@@ -98,7 +104,7 @@ ul.no-markers li {
 }
 #measurements-form output {
   font-weight: bold;
-  color: #5170ff;
+  color: var(--pattern-value);
 }
 
 p#size-note {
@@ -106,5 +112,3 @@ p#size-note {
   margin-top: 10px;
   font-style: italic;
 }
-
-/*# sourceMappingURL=socks.css.map */
