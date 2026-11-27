@@ -1,4 +1,5 @@
 .PHONY: serve
 
+# Serves the site like GitHub Pages does, including the 404.html router.
 serve:
-	python3 -m http.server 8080
+	python3 scripts/serve.py

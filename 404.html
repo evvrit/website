@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ev/vrit</title>
+  <script>
+    // Router. GitHub Pages serves this file for any URL that doesn't match a
+    // real file. Clean URLs like /patterns/socks need no route: Pages serves
+    // patterns/socks.html for them. This table only redirects old URLs from
+    // before pages moved into posts/ and patterns/, so shared links keep working.
+    const routes = {
+      "/i-dont-want-to-talk-about-bolivia": "/posts/i-dont-want-to-talk-about-bolivia",
+      "/quietly-radical":                   "/posts/quietly-radical",
+      "/sweater-curse":                     "/posts/sweater-curse",
+      "/socks":                             "/patterns/socks",
+    };
+
+    // "/socks.html", "/socks" and "/socks/" all route the same way.
+    const path = location.pathname.replace(/\/+$/, "").replace(/\.html$/, "");
+    const target = routes[path];
+    if (target) location.replace(target + location.search + location.hash);
+  </script>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <link rel="stylesheet" href="/styles/site.css">
+</head>
+<body>
+  <a href="/"><img class="home-button" src="/assets/photos/home.svg" alt="home"></a>
+  <h1>Page not found</h1>
+  <p>Nothing lives at this address. It may have moved, or been taken down.</p>
+  <p><a href="/">Back to the home page</a></p>
+</body>
+</html>
