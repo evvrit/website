@@ -1,7 +1,3 @@
-sup {
-  font-size: 0.6em;
-}
-
 h4 {
   margin-top: 2.5em;
   font-weight: 500;
@@ -55,34 +51,6 @@ blockquote.epigraph {
   }
 }
 
-.image-cards {
-  display: flex;
-  gap: 1em;
-  justify-content: center;
-  margin: 2em 0;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease;
-    }
-
-    small.imgcaption {
-      display: block;
-      text-align: center;
-      margin-top: 0.5em;
-      font-size: 0.9em;
-      color: #555;
-    }
-  }
-}
-
 .interlude {
   text-align: center;
   font-style: italic;
@@ -96,12 +64,3 @@ blockquote.epigraph {
   letter-spacing: 0.5em;
 }
 
-.footnotes {
-  font-size: 0.85em;
-  color: #555;
-  margin-top: 2em;
-
-  p {
-    margin: 0.25em 0;
-  }
-}
