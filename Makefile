@@ -8,7 +8,7 @@ serve:
 
 build: $(CSS_FILES)
 
-styles/%.css: styles/%.scss styles/_library.scss
+styles/%.css: styles/%.scss
 	sass $< $@
 
 watch:
