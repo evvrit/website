@@ -58,3 +58,11 @@
   a:visited {
     color: var(--text);
   }
+
+  .page-title {
+    margin-bottom: 0.5em;
+  }
+
+  .hidden {
+    display: none;
+  }
