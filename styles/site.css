@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Manjari:wght@100;400;700&family=Radley:ital@0;1&display=swap");
+
   :root {
     --sans-font: "Figtree", "Manjari", "Nimbus Sans L", "Noto Sans", "Segoe UI", Helvetica,
     "Helvetica Neue", sans-serif;
@@ -21,24 +23,57 @@
     --disabled: #efefef;
   }
 
-  #evvrit {
+  /* Type roles. Tags follow the page outline (h1 > h2 > h3, no skipped
+     levels); looks come only from these rules. See docs/adr/0002. */
+
+  /* Title: one per page */
+  h1 {
     font-family: "Arvo", serif;
     font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.15;
+    margin-bottom: 0.5em;
   }
 
+  /* Section */
+  h2 {
+    font-family: var(--sans-font);
+    font-size: 1.55rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  /* Subsection: only under an h2 */
   h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    margin-top: 0;
-    font-weight: 500;
+    font-family: var(--sans-font);
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
   }
 
-  h4, h5 {
-    text-transform: uppercase;
-    font-size: 0.92rem;
+  /* Label: a small heading-like look for any tag (dates, home page groups) */
+  .label {
     font-family: var(--serif-font);
-    margin-bottom: 2.5em;
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     color: var(--accent);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Small text */
+  .caption, figcaption {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-align: center;
+  }
+
+  .fine, .footnotes {
+    font-size: 0.85rem;
+    color: var(--text-light);
   }
 
   img {
@@ -57,10 +92,6 @@
 
   a:visited {
     color: var(--text);
-  }
-
-  .page-title {
-    margin-bottom: 0.5em;
   }
 
   .hidden {

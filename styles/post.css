@@ -49,9 +49,6 @@ sup {
 
 figcaption {
   margin-top: 0.5em;
-  font-size: 0.75em;
-  color: #777;
-  text-align: center;
 }
 
 /* Modifiers: apply to .photo-single, .photo-collage or .image-cards */
@@ -91,8 +88,6 @@ figcaption {
 /* Footnotes */
 
 .footnotes {
-  font-size: 0.85em;
-  color: #555;
   margin-top: 2em;
 }
 

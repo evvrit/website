@@ -1,15 +1,8 @@
 h1#page-title {
-  font-family: "Arvo", serif;
-  font-weight: 400;
-  font-style: normal;
   text-align: center;
 }
 
-h2 {
-  text-align: center;
-}
-
-h4.jump-target {
+h3.jump-target {
   margin-top: 2rem;
 }
 
