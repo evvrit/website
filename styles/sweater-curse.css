@@ -1,3 +1,5 @@
+/* Sweater Curse: styles only this Post uses (the YouTube-style comment). */
+
 .youtube-comment {
   display: flex;
   gap: 12px;
@@ -73,5 +75,3 @@
   color: var(--accent);
   font-weight: bold;
 }
-
-/*# sourceMappingURL=sweater-curse.css.map */

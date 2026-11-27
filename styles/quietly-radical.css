@@ -1,3 +1,5 @@
+/* Quietly Radical: styles only this Post uses. */
+
 blockquote {
   margin: 1.5em 0;
   padding: 0.5em 1.5em;
@@ -52,5 +54,3 @@ blockquote.epigraph cite {
   font-size: 1.2em;
   letter-spacing: 0.5em;
 }
-
-/*# sourceMappingURL=quietly-radical.css.map */
